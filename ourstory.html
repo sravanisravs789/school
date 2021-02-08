@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR STORY</title>
+    <link rel="stylesheet" href="ourstory.css">
+<!-- external links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+      <!-- navbar -->
+    <div>
+      <nav class="navbar navbar-expand-lg  fixed-top">
+          <div class="logo" >
+             BACKTOSCHOOL
+          </div>
+          <label for="btn" class="icon">
+          <span class="fa fa-bars"></span>
+          </label>
+          <input type="checkbox" id="btn" >
+          <ul>
+             <li><a href="index.html">Home</a></li>
+             <li>
+                <!-- <label for="btn-1" class="show">Features +</label> -->
+                <a href="#">Features</a>
+                <input type="checkbox" id="btn-1">
+                <ul>
+                   <li><a href="ourteam.html">our team</a></li>
+                   <li><a href="equipment.html">qualified staff</a></li>
+                   <li><a href="back2school.html">Academy</a></li>
+                </ul>
+             </li>
+             <li>
+                <!-- <label for="btn-2" class="show">Services +</label> -->
+                <a href="#">Services</a>
+                <input type="checkbox" id="btn-2">
+                <ul>
+                   <li><a href="ourstory.html">our review</a></li>
+                   <li><a href="alumni.html">Alumni</a></li>
+                   <li>
+                      <!-- <label for="btn-3" class="show">More +</label> -->
+                      <a href="#">More</a>
+                      <input type="checkbox" id="btn-3">
+                      <ul>
+                         <li><a href="#">Submenu-1</a></li>
+                         <li><a href="#">Submenu-2</a></li>
+                         <li><a href="#">Submenu-3</a></li>
+                      </ul>
+                   </li>
+                </ul>
+             </li>
+             <li><a href="Aboutb2s.html">About Us</a></li>
+             <li><a href="contactus.html">Contact</a></li>
+             <li><a href="backtoschooladmission.html">Admissions</a></li>
+             <li><a href="signup.html">SignUp/Register</a></li>
+          </ul>
+          
+       </nav>
+       
+       <script>
+          $('.icon').click(function(){
+            $('span').toggleClass("cancel");
+          });
+       </script>
+
+         <!-- our strory -->
+    <main>
+        <div class="ourstory">
+            <!-- title -->
+            <div class="title">
+                <h2>our reviews</h2>
+                <div class="underline"></div>
+            </div>
+    
+            <!-- review -->
+            <article class="review">
+                <div class="img-container">
+                    <img src="person-1.jpeg" id="person-img" alt="">
+                </div>
+                <h4 id="author">Sara Jones</h4>
+                <p id="job">UX Designer</p>
+                <p id="info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate quasi id fugit esse distinctio reiciendis officia vero consequatur. Vero, distinctio!</p>
+    
+                <!-- prev next buttons -->
+                <div class="button-container">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <!-- random button -->
+                <button class="random-btn">surprise me</button>
+            </article>
+    
+        </div>
+    </main>
+    <script>
+        // local reviews data
+const reviews = [
+	{
+		id: 1,
+		name: "susan smith",
+		// job: "web developer",
+		img:
+			"https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
+		text:
+			"I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry"
+	},
+	{
+		id: 2,
+		name: "anna johnson",
+		// job: "web designer",
+		img:
+			"https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
+		text:
+			"Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal."
+	},
+	{
+		id: 3,
+		name: "peter jones",
+		// job: "intern",
+		img:
+			"https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
+		text:
+			"Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag."
+	},
+	{
+		id: 4,
+		name: "bill anderson",
+		// job: "the boss",
+		img:
+			"https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
+		text:
+			"Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. "
+	}
+];
+
+// Select items
+const img = document.getElementById("person-img");
+const author = document.getElementById("author");
+const job = document.getElementById("job");
+const info = document.getElementById("info");
+
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
+
+// set starting item
+let currentItem = 0;
+
+// load initial item
+
+window.addEventListener("DOMContentLoaded", function () {
+	showPerson();
+});
+
+// show person based on item
+function showPerson() {
+	const item = reviews[currentItem];
+	img.src = item.img;
+	author.textContent = item.author;
+	job.textContent = item.job;
+	info.textContent = item.text;
+}
+
+// show next btn
+nextBtn.addEventListener("click", function () {
+	currentItem++;
+	if (currentItem > reviews.length - 1) {
+		currentItem = 0;
+	}
+	showPerson();
+});
+
+// show prev btn
+prevBtn.addEventListener("click", function () {
+	currentItem--;
+	if (currentItem < 0) {
+		currentItem = reviews.length - 1;
+	}
+	showPerson();
+});
+
+// show random person
+
+randomBtn.addEventListener("click", function () {
+	currentItem = Math.floor(Math.random() * reviews.length);
+	showPerson();
+});
+</script>
+
+
+
+
+ <!-- Site footer -->
+ <footer class="site-footer">
+    <div>
+      <div class="row">
+        <div class="col-sm-12 col-md-5">
+          <h6>About</h6>
+          <p class="text-justify" style="font-family: 'Poppins', sans-serif;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic maxime debitis minima quasi voluptatum molestias nam molestiae animi tenetur sit illum vel, perspiciatis id quam ratione dolore autem officiis dolorum aliquam, laboriosam facere veniam qui cupiditate. Beatae saepe ad porro, quisquam illo magni aspernatur explicabo vitae molestiae voluptatum recusandae eveniet!</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="#">C</a></li>
+            <li><a href="#">UI Design</a></li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">Java</a></li>
+            <li><a href="#">Android</a></li>
+            <li><a href="#">Templates</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">FACILITIES</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">PROFILO</a></li>
+            <li><a href="#">CONTACT US</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+       <a href="#">BACKTOSCHOOL</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+
+</div>
+</body>
+</html>

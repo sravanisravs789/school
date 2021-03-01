@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+
+/* body {
+    font-family: Arial, Helvetica, sans-serif;    
+  } */
+
+.container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    /* text-align: center; */
+  }
+  
+  h1{
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  label{
+    padding: 10px;
+    font-family: 'Cinzel', serif;    
+    color: rgb(189, 183, 96);
+    font-size: large;
+    margin: 10px;
+  }
+  
+ 
+
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 95%;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  textarea[name=address]{
+    width: 95%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    margin: 15px;
+  }
+
+  textarea[name=address]:focus{
+    background-color: #ddd;
+    outline: none;
+    
+  }
+
+  input[name=gender]{
+    margin: 15px;
+  }
+
+  input[type=date]{
+    margin: 10px;
+    padding: 7px;
+    width: 95%;
+    
+  }
+
+  select[name=courses]{
+    margin: 10px;
+    padding: 9px;
+    width: 95%;
+  }
+
+  select[name=courses]:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(189, 183, 96);
+    font-family: 'Cinzel', serif;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+
+  .btn:hover {
+    opacity: 1;
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(204, 51, 102) 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
